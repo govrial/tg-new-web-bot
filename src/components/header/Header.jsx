@@ -1,16 +1,14 @@
 import React from "react";
-import { tg } from "../../constants/tg";
+import { useTelegram } from "../../hooks/useTelegram";
 import "./Header.css";
 
 const Header = () => {
-  const onClose = () => {
-    tg.close();
-  };
+  const {tg, user, methods} = useTelegram();
 
   return (
     <div className="header">
-      <Button onClick={onClose}>Close</Button>
-      <div className="username">{tg.initDataUnsafe?.user?.username}</div>
+      <Button onClick={methods.onClose}>Close</Button>
+      <div className="username">{user?.username}</div>
       <div className="header__menu">
         <ul className="header__menu-list">
           <li className="header__menu-item">
