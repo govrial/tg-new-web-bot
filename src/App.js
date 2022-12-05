@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import './App.css';
-import Button from './components/Button';
+import Button from './components/button/Button';
 
 const tg = window.Telegram.WebApp;
 
@@ -16,9 +16,6 @@ function App() {
 
   return (
     <div className="App">
-      <Button onClick={onClose}>
-        Close
-      </Button>
     </div>
   );
 }
